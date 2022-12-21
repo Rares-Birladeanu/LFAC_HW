@@ -1,0 +1,89 @@
+1. variabile globale
+    #variabile
+    #constante
+
+2. structuri
+    2.1 atribute
+        #variabile
+        #constante
+
+    2.2 metode
+        #tipuri_date
+        #id
+        '(' #parametrii ')'
+        #instructiuni
+
+3. functii
+    #tipuri_date
+    #id
+    '(' #parametrii ')'
+    #instructiuni
+
+4. main;
+    4.1. variabile locale;
+        #tipuri_date
+        4.2.1 id
+
+    4.2. constante
+        #tipuri_date
+
+#instructiuni
+    #atribuire
+    #afisare
+    #if
+    #for
+    #while
+
+#atribuire
+    #id '=' #expresie
+
+#afisare
+    'printf(' #expresie ')'
+
+#if
+    'if' '(' #expresie ')' #instructiuni
+
+#for
+    'for' '(' #atribuire ';' #expresie ';' #atribuire ')' #instructiuni
+
+#while
+    'while' '(' #expresie ')' #instructiuni
+
+#expresie
+    #expresie_aritmetica
+    #expresie_logica
+
+#expresie_aritmetica
+    #expresie_aritmetica '+' #termen
+    #expresie_aritmetica '-' #termen
+    #expresie_aritmetica '*' #termen
+    #expresie_aritmetica '/' #termen
+
+#expresie_logica
+    #expresie_logica '&&' #expresie_logica
+    #expresie_logica '||' #expresie_logica
+    #expresie_logica '==' #expresie_logica
+    #expresie_logica '!=' #expresie_logica
+    #expresie_logica '<' #expresie_logica
+    #expresie_logica '>' #expresie_logica
+    #expresie_logica '<=' #expresie_logica
+    #expresie_logica '>=' #expresie_logica
+
+#parametrii
+    #tipuri_date
+    #id
+    ',' #parametrii
+
+#constante
+    'const' #variabile
+
+#variabile
+    #tipuri_date
+    #id
+
+#tipuri_date
+    int
+    float
+    char
+    bool
+    string
