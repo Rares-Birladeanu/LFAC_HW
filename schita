@@ -1,3 +1,8 @@
+bison -d ex1.y
+flex limbaj.l
+gcc ./lex.yy.c ./ex1.tab.c
+./a.out
+
 1. variabile globale
     #variabile
     #constante

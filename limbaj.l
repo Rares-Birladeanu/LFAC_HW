@@ -1,6 +1,6 @@
 %{
 #include <stdio.h>
-#include "y.tab.h"
+#include "limbaj.tab.h"
 %}
 %option noyywrap
 
@@ -30,7 +30,6 @@
 "string"                    { yylval.dataType = strdup(yytext);return STRINGTYPE; }
 "bool"                      { yylval.dataType = strdup(yytext);return BOOLTYPE; }
 "array"                     { yylval.dataType = strdup(yytext);return ARRAYTYPE; }
-"struct"                    { yylval.dataType = strdup(yytext);return STRUCTTYPE; }
 "("                         { return LPAREN; }
 ")"                         { return RPAREN; }
 "["                         { return LBRACKET; }

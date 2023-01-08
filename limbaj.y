@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "ZeN.h"
+#include "limbaj.h"
 
 extern FILE* yyin;
 extern char* yytext;
@@ -17,7 +17,7 @@ extern char* yytext;
   char *key;
 }
 
-%token STRINGVAL  CHARVAL LBRACKET RBRACKET TRUE FALSE EVAL WHILE FOR IF ELSE BOOLEQ BOOLGEQ BOOLLEQ BOOLNEQ LOGICALAND LOGICALOR  DECLF FCALL RETURN  BOOLGE BOOLLE EQ OBJCALL OBJTYPE
+%token STRINGVAL  CHARVAL LBRACKET RBRACKET TRUE FALSE EVAL WHILE FOR IF ELSE BOOLEQ BOOLGEQ BOOLLEQ BOOLNEQ LOGICALAND LOGICALOR  DECLF FCALL RETURN  BOOLGE BOOLLE EQ STRUCTCALL OBJTYPE
 %token <dataType> INTTYPE BOOLTYPE STRINGTYPE ARRAYTYPE  CHARTYPE
 %token <intVal> NR
 %token <strVal> ID
@@ -45,8 +45,8 @@ objects   : objects object
           | object
           ;
 
-object    : OBJCALL depthAdd OBJTYPE ID LBRACKET  atributelist objEnd 
-          | OBJCALL depthAdd OBJTYPE ID LBRACKET objEnd
+object    : STRUCTCALL depthAdd OBJTYPE ID LBRACKET  atributelist objEnd 
+          | STRUCTCALL depthAdd OBJTYPE ID LBRACKET objEnd
           ;
 
 objEnd    : RBRACKET { decreaseDepth(); }
