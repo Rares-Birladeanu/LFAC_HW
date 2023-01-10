@@ -30,12 +30,8 @@
 "string"                    { yylval.dataType = strdup(yytext);return STRINGTYPE; }
 "bool"                      { yylval.dataType = strdup(yytext);return BOOLTYPE; }
 "array"                     { yylval.dataType = strdup(yytext);return ARRAYTYPE; }
-"("                         { return LPAREN; }
-")"                         { return RPAREN; }
-"["                         { return LBRACKET; }
-"]"                         { return RBRACKET; }
-"{"                         { return LBRACE; }
-"}"                         { return RBRACE; }
+"{"                         { return LBRACKET; }
+"}"                         { return RBRACKET; }
 "true"                      { return TRUE; }
 "false"                     { return FALSE; }
 "while"                     { return WHILE; }

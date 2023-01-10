@@ -1885,9 +1885,9 @@ yyreduce:
 #line 156 "limbaj.y"
     { 
                int i; 
-               if((i=existsVariable((yyvsp[(3) - (6)].strVal))) != -1){ 
+               if((i=variableIndex((yyvsp[(3) - (6)].strVal))) != -1){ 
                     updateVariableValue((yyvsp[(3) - (6)].strVal), (yyvsp[(5) - (6)].intVal));
-                    (yyval.intVal) =  symTable[i].Value ;
+                    (yyval.intVal) =  symbolTable[i].Value ;
                } else {
                     printf("Variable doesn't exist\n"); 
                     printf("Error: argument for Eval is not valid!\n");
@@ -1900,8 +1900,8 @@ yyreduce:
 #line 168 "limbaj.y"
     { 
                int i;
-               if((i=existsVariable((yyvsp[(3) - (4)].strVal))) != -1) {   
-                    (yyval.intVal)= symTable[i].Value;
+               if((i=variableIndex((yyvsp[(3) - (4)].strVal))) != -1) {   
+                    (yyval.intVal)= symbolTable[i].Value;
                } else {
                     printf("Variable doesn't exist\n"); 
                     printf("Error: argument for Eval is not valid!\n");

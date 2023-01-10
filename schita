@@ -1,6 +1,6 @@
-bison -d ex1.y
+bison -d limbaj.y
 flex limbaj.l
-gcc ./lex.yy.c ./ex1.tab.c
+gcc lex.yy.c limbaj.tab.c
 ./a.out
 
 1. variabile globale

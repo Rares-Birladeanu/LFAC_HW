@@ -155,9 +155,9 @@ e    : e PLUS e   {$$=$1+$3; }
      | DECL INTTYPE ID EQ NR'.' 
           { 
                int i; 
-               if((i=existsVariable($3)) != -1){ 
+               if((i=variableIndex($3)) != -1){ 
                     updateVariableValue($3, $5);
-                    $$ =  symTable[i].Value ;
+                    $$ =  symbolTable[i].Value ;
                } else {
                     printf("Variable doesn't exist\n"); 
                     printf("Error: argument for Eval is not valid!\n");
@@ -167,8 +167,8 @@ e    : e PLUS e   {$$=$1+$3; }
      | DECL INTTYPE ID'.'
           { 
                int i;
-               if((i=existsVariable($3)) != -1) {   
-                    $$= symTable[i].Value;
+               if((i=variableIndex($3)) != -1) {   
+                    $$= symbolTable[i].Value;
                } else {
                     printf("Variable doesn't exist\n"); 
                     printf("Error: argument for Eval is not valid!\n");
@@ -270,7 +270,7 @@ boolOp    : BOOLEQ
 
 %%
 
-int yyerror(char * s){
+void yyerror(char * s){
 printf("Error: %s on line:%d and yytext is %s\n",s,yylineno,yytext);
 }
 
